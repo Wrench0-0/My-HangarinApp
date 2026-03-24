@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure--7!6k%figys@s^^+qp!=w@xqd*t15g12nncj34mc+pl92f%y-s
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'wrenchieY2j.pythonanywhere.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'wrenchiequake.pythonanywhere.com']
 
 # Application definition
 
@@ -46,12 +46,12 @@ INSTALLED_APPS = [
     'pwa',
     'widget_tweaks',
 ]
-if os.environ.get('PYTHONANYWHERE_SITE') == 'daepsean.pythonanywhere.com':
+if os.environ.get('PYTHONANYWHERE_SITE') == 'wrenchiequake.pythonanywhere.com':
     SITE_ID = 2
 else:
     hostname = socket.gethostname()
 
-    if 'daepsean' in hostname and 'pythonanywhere' in hostname:
+    if 'wrenchiequake' in hostname and 'pythonanywhere' in hostname:
         SITE_ID = 2
     else:
         SITE_ID = 2

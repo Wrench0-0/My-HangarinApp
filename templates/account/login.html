@@ -46,17 +46,18 @@
                         <form method="post" action="{% url 'account_login' %}">
                             {% csrf_token %}
                             {% load socialaccount %}
-                            {% if socialaccount.socialapp_set.all %}
+                            {% get_providers as socialaccount_providers %}
+                            {% if socialaccount_providers %}
                             <div class="text-center mb-3">
                                 <p>Sign in with:</p>
                                 {% providers_media_js %}
-                                {% for app in socialaccount.socialapp_set.all %}
-                                  {% if app.provider == 'google' %}
-                                    <a href="{% provider_login_url 'google' %}" class="btn btn-link btn-floating mx-1">
+                                {% for provider in socialaccount_providers %}
+                                  {% if provider.id == 'google' %}
+                                    <a href="{% provider_login_url provider.id %}" class="btn btn-link btn-floating mx-1">
                                         <i class="fab fa-google"></i>
                                     </a>
-                                  {% elif app.provider == 'github' %}
-                                    <a href="{% provider_login_url 'github' %}" class="btn btn-link btn-floating mx-1">
+                                  {% elif provider.id == 'github' %}
+                                    <a href="{% provider_login_url provider.id %}" class="btn btn-link btn-floating mx-1">
                                         <i class="fab fa-github"></i>
                                     </a>
                                   {% endif %}
