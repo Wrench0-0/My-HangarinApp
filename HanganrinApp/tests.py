@@ -7,7 +7,7 @@ from django.utils import timezone
 
 class CRUDViewsSmokeTests(TestCase):
     def setUp(self):
-        # Create and log in a test user
+        # Create and log in a test users
         from django.contrib.auth import get_user_model
         User = get_user_model()
         self.user = User.objects.create_user(username='testuser', password='testpass123')
