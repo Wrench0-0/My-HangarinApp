@@ -1,5 +1,6 @@
 from django.apps import AppConfig
 
 
-class TasksConfig(AppConfig):
-    name = 'tasks'
+class HanggarinAppConfig(AppConfig):
+    default_auto_field = 'django.db.models.BigAutoField'
+    name = 'HanganrinApp'
