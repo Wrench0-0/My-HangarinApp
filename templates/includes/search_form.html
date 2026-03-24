@@ -1,0 +1,13 @@
+<form method="get" class="mb-3">
+  <div class="input-group">
+    <input type="text" name="q" value="{{ q }}" class="form-control" placeholder="Search categories..." aria-label="Search">
+    <button class="btn btn-outline-secondary" type="submit">
+      <i class="fas fa-search"></i> Search
+    </button>
+    {% if q %}
+      <a href="{% url 'category-list' %}" class="btn btn-outline-danger">
+        <i class="fas fa-times"></i> Clear
+      </a>
+    {% endif %}
+  </div>
+</form>
